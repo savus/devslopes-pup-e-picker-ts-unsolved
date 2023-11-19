@@ -31,11 +31,15 @@ export function FunctionalApp() {
       <header>
         <h1>pup-e-picker (Functional)</h1>
       </header>
-      <FunctionalSection>
-        <FunctionalDogs
-          filteredDogs={filteredDogs}
-        />
-        <FunctionalCreateDogForm />
+      <FunctionalSection
+        activeTabState={activeTabState}
+        setActiveTabState={(tabState) => {
+          if (tabState === activeTabState) return setActiveTabState("all-dogs");
+          return setActiveTabState(tabState);
+        }}
+      >
+        <FunctionalDogs filteredDogs={filteredDogs} />
+        {activeTabState === "create-dog" && <FunctionalCreateDogForm />}
       </FunctionalSection>
     </div>
   );

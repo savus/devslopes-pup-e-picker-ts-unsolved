@@ -1,5 +1,4 @@
 import { DogCard } from "../Shared/DogCard";
-import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
 
 // Right now these dogs are constant, but in reality we should be getting these from our server
