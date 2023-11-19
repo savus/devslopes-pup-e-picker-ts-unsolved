@@ -12,7 +12,7 @@ export const Requests = {
     fetch(`${baseUrl}/dogs`, {
       method: "POST",
       body: JSON.stringify(dog),
-      headers: { "Content=Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => response.json()),
 
   // should delete a dog from the database
@@ -21,7 +21,10 @@ export const Requests = {
       method: "DELETE",
     }).then((response) => response.json()),
 
-  updateDog: (dogInfo: Omit<Dog, "id" | "name" | "description">, id: number) =>
+  updateDog: (
+    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
+    id: number
+  ) =>
     fetch(`${baseUrl}/dogs/${id}`, {
       method: "PATCH",
       body: JSON.stringify(dogInfo),
