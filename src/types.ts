@@ -10,6 +10,6 @@ export type Dog = {
 
 export type TActiveTab =
   | "all-dogs"
-  | "favorites"
-  | "unfavorites"
+  | "favorited"
+  | "unfavorited"
   | "create-dog";

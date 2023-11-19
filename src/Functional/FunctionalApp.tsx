@@ -15,15 +15,39 @@ export function FunctionalApp() {
         return true;
       case "create-dog":
         return false;
-      case "favorites":
+      case "favorited":
         return dog.isFavorite;
-      case "unfavorites":
+      case "unfavorited":
         return !dog.isFavorite;
     }
   });
 
+  const getNumOfFilteredDogs = (string: "favorited" | "unfavorited") =>
+    allDogs.filter((dog) =>
+      string === "favorited" ? dog.isFavorite : !dog.isFavorite
+    ).length;
+
+  const fetchData = () => {
+    return Requests.getAllDogs().then(setAllDogs);
+  };
+
+  const postDog = (dog: Omit<Dog, "id">) => {
+    return Requests.postDog(dog).then(fetchData);
+  };
+
+  const deleteDog = (id: number) => {
+    return Requests.deleteDog(id).then(fetchData);
+  };
+
+  const updateDog = (
+    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
+    id: number
+  ) => {
+    return Requests.updateDog(dogInfo, id).then(fetchData);
+  };
+
   useEffect(() => {
-    Requests.getAllDogs().then(setAllDogs);
+    fetchData();
   }, []);
 
   return (
@@ -37,8 +61,9 @@ export function FunctionalApp() {
           if (tabState === activeTabState) return setActiveTabState("all-dogs");
           return setActiveTabState(tabState);
         }}
+        getNumOfFilteredDogs={getNumOfFilteredDogs}
       >
-        <FunctionalDogs filteredDogs={filteredDogs} />
+        <FunctionalDogs filteredDogs={filteredDogs} deleteDog={deleteDog} updateDog={updateDog} />
         {activeTabState === "create-dog" && <FunctionalCreateDogForm />}
       </FunctionalSection>
     </div>

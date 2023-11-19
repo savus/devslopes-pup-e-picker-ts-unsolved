@@ -7,10 +7,12 @@ export const FunctionalSection = ({
   children,
   activeTabState,
   setActiveTabState,
+  getNumOfFilteredDogs,
 }: {
   children: ReactNode;
   activeTabState: TActiveTab;
   setActiveTabState: (tabState: TActiveTab) => void;
+  getNumOfFilteredDogs: (string: "favorited" | "unfavorited") => number;
 }) => {
   return (
     <section id="main-section">
@@ -23,25 +25,25 @@ export const FunctionalSection = ({
           {/* This should display the favorited count */}
           <div
             className={`selector ${
-              activeTabState === "favorites" ? "active" : ""
+              activeTabState === "favorited" ? "active" : ""
             }`}
             onClick={() => {
-              setActiveTabState("favorites");
+              setActiveTabState("favorited");
             }}
           >
-            favorited ( 12 )
+            favorited ( {getNumOfFilteredDogs("favorited")} )
           </div>
 
           {/* This should display the unfavorited count */}
           <div
             className={`selector ${
-              activeTabState === "unfavorites" ? "active" : ""
+              activeTabState === "unfavorited" ? "active" : ""
             }`}
             onClick={() => {
-              setActiveTabState("unfavorites");
+              setActiveTabState("unfavorited");
             }}
           >
-            unfavorited ( 25 )
+            unfavorited ( {getNumOfFilteredDogs("unfavorited")} )
           </div>
           <div
             className={`selector ${
