@@ -63,8 +63,14 @@ export function FunctionalApp() {
         }}
         getNumOfFilteredDogs={getNumOfFilteredDogs}
       >
-        <FunctionalDogs filteredDogs={filteredDogs} deleteDog={deleteDog} updateDog={updateDog} />
-        {activeTabState === "create-dog" && <FunctionalCreateDogForm />}
+        <FunctionalDogs
+          filteredDogs={filteredDogs}
+          deleteDog={deleteDog}
+          updateDog={updateDog}
+        />
+        {activeTabState === "create-dog" && (
+          <FunctionalCreateDogForm postDog={postDog} />
+        )}
       </FunctionalSection>
     </div>
   );
