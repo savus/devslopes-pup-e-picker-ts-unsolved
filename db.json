@@ -4,7 +4,7 @@
       "name": "Velma",
       "image": "/assets/boxer.png",
       "description": "Diesel whether synthesize South Investment Zirconium farad",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 8
     },
     {
@@ -13,13 +13,6 @@
       "description": "Automotive Monitored circa violet Georgia",
       "isFavorite": true,
       "id": 11
-    },
-    {
-      "name": "Estefania",
-      "image": "/assets/dalmation.png",
-      "description": "reboot facilis input management that overriding SMTP",
-      "isFavorite": true,
-      "id": 12
     },
     {
       "name": "Myles",
@@ -39,14 +32,14 @@
       "name": "Oral",
       "image": "/assets/chihuahua.avif",
       "description": "City Optimized Corporate Clothing Implemented Metal navigating Chair",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 15
     },
     {
       "name": "Anjali",
       "image": "/assets/chihuahua.avif",
       "description": "Bicycle canst nor henry RAM",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 16
     },
     {
@@ -57,25 +50,25 @@
       "id": 19
     },
     {
-      "name": "asdfasdf",
-      "description": "asdfasdf",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 20
-    },
-    {
       "name": "Louee",
       "description": "The Best Dog",
       "image": "/assets/cowardly.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 21
     },
     {
       "name": "New Dog",
       "description": "This is a new dog",
       "image": "/assets/boxer.jpeg",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 22
+    },
+    {
+      "name": "Louee",
+      "description": "Best dog in the whole wide world",
+      "image": "/assets/boxer.jpeg",
+      "isFavorite": true,
+      "id": 23
     }
   ]
 }
