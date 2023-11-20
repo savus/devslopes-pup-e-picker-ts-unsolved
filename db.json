@@ -1,17 +1,10 @@
 {
   "dogs": [
     {
-      "name": "Velma",
-      "image": "/assets/boxer.png",
-      "description": "Diesel whether synthesize South Investment Zirconium farad",
-      "isFavorite": true,
-      "id": 8
-    },
-    {
       "name": "Estevan",
       "image": "/assets/dalmation.png",
       "description": "Automotive Monitored circa violet Georgia",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 11
     },
     {
@@ -39,7 +32,7 @@
       "name": "Anjali",
       "image": "/assets/chihuahua.avif",
       "description": "Bicycle canst nor henry RAM",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 16
     },
     {
@@ -69,6 +62,20 @@
       "image": "/assets/boxer.jpeg",
       "isFavorite": true,
       "id": 23
+    },
+    {
+      "name": "New dog",
+      "description": "new dog description",
+      "image": "/assets/boxer.jpeg",
+      "isFavorite": false,
+      "id": 24
+    },
+    {
+      "name": "Louee",
+      "description": "best dog description",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 25
     }
   ]
 }

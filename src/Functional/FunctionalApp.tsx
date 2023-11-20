@@ -53,11 +53,10 @@ export function FunctionalApp() {
   };
 
   const updateDog = (
-    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
-    id: number
+    dogInfo: Omit<Dog, "name" | "description" | "image">
   ) => {
     setIsLoading(true);
-    return Requests.updateDog(dogInfo, id).then(fetchData);
+    return Requests.updateDog(dogInfo).then(fetchData);
   };
 
   useEffect(() => {

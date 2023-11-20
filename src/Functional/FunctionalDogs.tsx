@@ -11,8 +11,7 @@ export const FunctionalDogs = ({
   filteredDogs: Dog[];
   deleteDog: (id: number) => Promise<unknown>;
   updateDog: (
-    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
-    id: number
+    dogInfo: Omit<Dog, "name" | "description" | "image">
   ) => Promise<unknown>;
   isLoading: boolean;
 }) => {
@@ -28,10 +27,10 @@ export const FunctionalDogs = ({
             deleteDog(dog.id);
           }}
           onHeartClick={() => {
-            updateDog({ isFavorite: false }, dog.id);
+            updateDog({ id: dog.id, isFavorite: false });
           }}
           onEmptyHeartClick={() => {
-            updateDog({ isFavorite: true }, dog.id);
+            updateDog({ id: dog.id, isFavorite: true } );
           }}
           isLoading={isLoading}
         />

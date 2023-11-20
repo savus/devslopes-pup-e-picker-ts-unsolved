@@ -6,8 +6,7 @@ import { Dog } from "../types";
 export class ClassDogs extends Component<{
   filteredDogs: Dog[];
   updateDog: (
-    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
-    id: number
+    dogInfo: Omit<Dog, "name" | "description" | "image">
   ) => Promise<unknown>;
   deleteDog: (id: number) => Promise<unknown>;
   isLoading: boolean;
@@ -24,10 +23,10 @@ export class ClassDogs extends Component<{
               deleteDog(dog.id);
             }}
             onHeartClick={() => {
-              updateDog({ isFavorite: false }, dog.id);
+              updateDog({ id: dog.id, isFavorite: false });
             }}
             onEmptyHeartClick={() => {
-              updateDog({ isFavorite: true }, dog.id);
+              updateDog({ id: dog.id, isFavorite: true });
             }}
             isLoading={isLoading}
           />

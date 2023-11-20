@@ -22,10 +22,9 @@ export const Requests = {
     }).then((response) => response.json()),
 
   updateDog: (
-    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
-    id: number
+    dogInfo: Omit<Dog, "name" | "description" | "image">
   ) =>
-    fetch(`${baseUrl}/dogs/${id}`, {
+    fetch(`${baseUrl}/dogs/${dogInfo.id}`, {
       method: "PATCH",
       body: JSON.stringify(dogInfo),
       headers: { "Content-Type": "application/json" },

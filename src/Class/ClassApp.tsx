@@ -45,11 +45,10 @@ export class ClassApp extends Component {
   };
 
   updateDog = (
-    dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
-    id: number
+    dogInfo: Omit<Dog, "name" | "description" | "image">
   ) => {
     this.setState({ isLoading: true });
-    return Requests.updateDog(dogInfo, id).then(this.fetchData);
+    return Requests.updateDog(dogInfo).then(this.fetchData);
   };
 
   getNumOfFilteredDogs = (string: "favorited" | "unfavorited") =>
