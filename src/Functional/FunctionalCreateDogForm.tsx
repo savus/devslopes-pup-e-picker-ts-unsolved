@@ -7,12 +7,20 @@ const defaultSelectedImage = dogPictures.BlueHeeler;
 
 export const FunctionalCreateDogForm = ({
   postDog,
+  isLoading,
 }: {
-  postDog: (dog: Omit<Dog, "id">) => void;
+  postDog: (dog: Omit<Dog, "id">) => Promise<unknown>;
+  isLoading: boolean;
 }) => {
   const [dogNameInput, setDogNameInput] = useState("");
   const [dogDescriptionInput, setDogDescriptionInput] = useState("");
   const [dogImageInput, setDogImageInput] = useState(defaultSelectedImage);
+
+  const resetValues = () => {
+    setDogNameInput("");
+    setDogDescriptionInput("");
+    setDogImageInput(defaultSelectedImage);
+  };
 
   return (
     <form
@@ -26,6 +34,7 @@ export const FunctionalCreateDogForm = ({
           image: dogImageInput,
           isFavorite: false,
         });
+        resetValues();
       }}
     >
       <h4>Create a New Dog</h4>
@@ -34,7 +43,7 @@ export const FunctionalCreateDogForm = ({
         type="text"
         value={dogNameInput}
         onChange={(e) => setDogNameInput(e.target.value)}
-        disabled={false}
+        disabled={isLoading}
       />
       <label htmlFor="description">Dog Description</label>
       <textarea
@@ -44,13 +53,14 @@ export const FunctionalCreateDogForm = ({
         rows={10}
         value={dogDescriptionInput}
         onChange={(e) => setDogDescriptionInput(e.target.value)}
-        disabled={false}
+        disabled={isLoading}
       ></textarea>
       <label htmlFor="picture">Select an Image</label>
       <select
         id=""
         value={dogImageInput}
         onChange={(e) => setDogImageInput(e.target.value)}
+        disabled={isLoading}
       >
         {Object.entries(dogPictures).map(([label, pictureValue]) => {
           return (
@@ -60,7 +70,7 @@ export const FunctionalCreateDogForm = ({
           );
         })}
       </select>
-      <input type="submit" />
+      <input type="submit" disabled={isLoading} />
     </form>
   );
 };

@@ -1,31 +1,10 @@
 {
   "dogs": [
     {
-      "name": "Dallin",
-      "image": "/assets/chihuahua.avif",
-      "description": "Directives Delaware why Response Diesel Kentucky blue cyan",
-      "isFavorite": true,
-      "id": 4
-    },
-    {
-      "name": "Efrain",
-      "image": "/assets/chihuahua.avif",
-      "description": "Electric Analyst Usability Mountain East Table female Lead",
-      "isFavorite": true,
-      "id": 5
-    },
-    {
-      "name": "Roy",
-      "image": "/assets/corgi.png",
-      "description": "male AGP copying Chair exercitationem",
-      "isFavorite": true,
-      "id": 6
-    },
-    {
       "name": "Velma",
       "image": "/assets/boxer.png",
       "description": "Diesel whether synthesize South Investment Zirconium farad",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 8
     },
     {
@@ -60,22 +39,15 @@
       "name": "Oral",
       "image": "/assets/chihuahua.avif",
       "description": "City Optimized Corporate Clothing Implemented Metal navigating Chair",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 15
     },
     {
       "name": "Anjali",
       "image": "/assets/chihuahua.avif",
       "description": "Bicycle canst nor henry RAM",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 16
-    },
-    {
-      "name": "Angelina",
-      "image": "/assets/blue-heeler.png",
-      "description": "Manager Sodium FTM maroon SSD Jewelery White bully",
-      "isFavorite": false,
-      "id": 17
     },
     {
       "name": "Yvette",
@@ -90,6 +62,20 @@
       "image": "/assets/blue-heeler.png",
       "isFavorite": false,
       "id": 20
+    },
+    {
+      "name": "Louee",
+      "description": "The Best Dog",
+      "image": "/assets/cowardly.png",
+      "isFavorite": false,
+      "id": 21
+    },
+    {
+      "name": "New Dog",
+      "description": "This is a new dog",
+      "image": "/assets/boxer.jpeg",
+      "isFavorite": false,
+      "id": 22
     }
   ]
 }

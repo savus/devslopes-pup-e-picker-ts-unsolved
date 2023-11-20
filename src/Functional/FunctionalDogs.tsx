@@ -6,13 +6,15 @@ export const FunctionalDogs = ({
   filteredDogs,
   deleteDog,
   updateDog,
+  isLoading,
 }: {
   filteredDogs: Dog[];
-  deleteDog: (id: number) => void;
+  deleteDog: (id: number) => Promise<unknown>;
   updateDog: (
     dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
     id: number
-  ) => void;
+  ) => Promise<unknown>;
+  isLoading: boolean;
 }) => {
   return (
     //  the "<> </>"" are called react fragments, it's like adding all the html inside
@@ -31,7 +33,7 @@ export const FunctionalDogs = ({
           onEmptyHeartClick={() => {
             updateDog({ isFavorite: true }, dog.id);
           }}
-          isLoading={false}
+          isLoading={isLoading}
         />
       ))}
     </>

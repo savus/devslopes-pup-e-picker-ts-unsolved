@@ -4,10 +4,12 @@ import { FunctionalDogs } from "./FunctionalDogs";
 import { FunctionalSection } from "./FunctionalSection";
 import { Dog, TActiveTab } from "../types";
 import { Requests } from "../api";
+import toast from "react-hot-toast";
 
 export function FunctionalApp() {
   const [allDogs, setAllDogs] = useState<Dog[]>([]);
   const [activeTabState, setActiveTabState] = useState<TActiveTab>("all-dogs");
+  const [isLoading, setIsLoading] = useState(false);
 
   const filteredDogs = allDogs.filter((dog) => {
     switch (activeTabState) {
@@ -28,14 +30,25 @@ export function FunctionalApp() {
     ).length;
 
   const fetchData = () => {
-    return Requests.getAllDogs().then(setAllDogs);
+    setIsLoading(true);
+    return Requests.getAllDogs()
+      .then(setAllDogs)
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const postDog = (dog: Omit<Dog, "id">) => {
-    return Requests.postDog(dog).then(fetchData);
+    setIsLoading(true);
+    return Requests.postDog(dog)
+      .then(() => {
+        toast.success("Dog Created");
+      })
+      .then(fetchData);
   };
 
   const deleteDog = (id: number) => {
+    setIsLoading(true);
     return Requests.deleteDog(id).then(fetchData);
   };
 
@@ -43,6 +56,7 @@ export function FunctionalApp() {
     dogInfo: Omit<Dog, "id" | "name" | "description" | "image">,
     id: number
   ) => {
+    setIsLoading(true);
     return Requests.updateDog(dogInfo, id).then(fetchData);
   };
 
@@ -67,9 +81,10 @@ export function FunctionalApp() {
           filteredDogs={filteredDogs}
           deleteDog={deleteDog}
           updateDog={updateDog}
+          isLoading={isLoading}
         />
         {activeTabState === "create-dog" && (
-          <FunctionalCreateDogForm postDog={postDog} />
+          <FunctionalCreateDogForm postDog={postDog} isLoading={isLoading} />
         )}
       </FunctionalSection>
     </div>
