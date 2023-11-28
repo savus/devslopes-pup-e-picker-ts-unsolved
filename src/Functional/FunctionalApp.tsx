@@ -42,19 +42,28 @@ export function FunctionalApp() {
       .then(() => {
         toast.success("Dog Created");
       })
-      .then(fetchData);
+      .then(fetchData)
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const deleteDog = (id: number) => {
     setIsLoading(true);
-    return Requests.deleteDog(id).then(fetchData);
+    return Requests.deleteDog(id)
+      .then(fetchData)
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
-  const updateDog = (
-    dogInfo: Omit<Dog, "name" | "description" | "image">
-  ) => {
+  const updateDog = (dogInfo: Omit<Dog, "name" | "description" | "image">) => {
     setIsLoading(true);
-    return Requests.updateDog(dogInfo).then(fetchData);
+    return Requests.updateDog(dogInfo)
+      .then(fetchData)
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
