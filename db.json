@@ -71,11 +71,18 @@
       "id": 27
     },
     {
-      "name": "Louee",
-      "description": "Best dog ",
+      "name": "Great Dog",
+      "description": "BEstest Dog",
       "image": "/assets/yorkie.jpg",
       "isFavorite": false,
-      "id": 28
+      "id": 29
+    },
+    {
+      "name": "LouuBear",
+      "description": "Loueeiest Loue of all Loue",
+      "image": "/assets/yorkie2.jpg",
+      "isFavorite": false,
+      "id": 30
     }
   ]
 }

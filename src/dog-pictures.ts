@@ -5,6 +5,7 @@ import Corgi from "/assets/corgi.png";
 import Cowardly from "/assets/cowardly.png";
 import Dalmation from "/assets/dalmation.png";
 import Yorkie from "/assets/yorkie.jpg";
+import BestDog from "/assets/yorkie2.jpg";
 
 export const dogPictures = {
   BlueHeeler,
@@ -14,4 +15,5 @@ export const dogPictures = {
   Cowardly,
   Dalmation,
   Yorkie,
+  BestDog
 };
