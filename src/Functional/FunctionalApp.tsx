@@ -24,10 +24,8 @@ export function FunctionalApp() {
     }
   });
 
-  const getNumOfFilteredDogs = (string: "favorited" | "unfavorited") =>
-    allDogs.filter((dog) =>
-      string === "favorited" ? dog.isFavorite : !dog.isFavorite
-    ).length;
+  const numOfFavorited = allDogs.filter((dog) => dog.isFavorite).length;
+  const numOfUnfavorited = allDogs.length - numOfFavorited;
 
   const fetchData = () => {
     setIsLoading(true);
@@ -74,7 +72,8 @@ export function FunctionalApp() {
           if (tabState === activeTabState) return setActiveTabState("all-dogs");
           return setActiveTabState(tabState);
         }}
-        getNumOfFilteredDogs={getNumOfFilteredDogs}
+        numOfFavorited={numOfFavorited}
+        numOfUnFavorited={numOfUnfavorited}
       >
         <FunctionalDogs
           filteredDogs={filteredDogs}
