@@ -4,29 +4,8 @@
       "name": "Myles",
       "image": "/assets/blue-heeler.png",
       "description": "Synchronised group sensor composite raw anenst navigate",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 13
-    },
-    {
-      "name": "Santiago",
-      "image": "/assets/corgi.png",
-      "description": "woman Global piercing Rap Web",
-      "isFavorite": true,
-      "id": 14
-    },
-    {
-      "name": "Oral",
-      "image": "/assets/chihuahua.avif",
-      "description": "City Optimized Corporate Clothing Implemented Metal navigating Chair",
-      "isFavorite": true,
-      "id": 15
-    },
-    {
-      "name": "Anjali",
-      "image": "/assets/chihuahua.avif",
-      "description": "Bicycle canst nor henry RAM",
-      "isFavorite": true,
-      "id": 16
     },
     {
       "name": "Yvette",
@@ -48,13 +27,6 @@
       "image": "/assets/boxer.jpeg",
       "isFavorite": true,
       "id": 22
-    },
-    {
-      "name": "Louee",
-      "description": "best dog description",
-      "image": "/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 25
     },
     {
       "name": "dfwerw",

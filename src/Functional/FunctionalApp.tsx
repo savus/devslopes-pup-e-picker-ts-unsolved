@@ -11,7 +11,10 @@ export function FunctionalApp() {
   const [activeTabState, setActiveTabState] = useState<TActiveTab>("all-dogs");
   const [isLoading, setIsLoading] = useState(false);
 
+  let numOfFavorited = 0;
+
   const filteredDogs = allDogs.filter((dog) => {
+    if (dog.isFavorite) numOfFavorited++;
     switch (activeTabState) {
       case "all-dogs":
         return true;
@@ -24,7 +27,6 @@ export function FunctionalApp() {
     }
   });
 
-  const numOfFavorited = allDogs.filter((dog) => dog.isFavorite).length;
   const numOfUnfavorited = allDogs.length - numOfFavorited;
 
   const fetchData = () => {
