@@ -62,6 +62,20 @@
       "image": "/assets/blue-heeler.png",
       "isFavorite": false,
       "id": 26
+    },
+    {
+      "name": "fwerw",
+      "description": "werwe",
+      "image": "/assets/yorki.png",
+      "isFavorite": false,
+      "id": 27
+    },
+    {
+      "name": "Louee",
+      "description": "Best dog ",
+      "image": "/assets/yorkie.jpg",
+      "isFavorite": false,
+      "id": 28
     }
   ]
 }
